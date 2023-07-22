@@ -1,52 +1,29 @@
 #include<iostream>
-#include<srting.h>
+#include<string.h>
+
 using namespace std;
 
-class time {
-      int hours;
-      int minutes;
-      int seconds;
-      
-      publice;
-              void gettime(void);
-              void puttime(void);
-              void addtime(time t1, time t2);
-};
+int main(){
 
-void time ::gettime(void){
-       
-       count<<"enter time;"<<endl;
-       cout<<"hours? ";
-       cont>>hours;
-       count<<"minutes;"
-       cin>>minutes;
-       count<<"seconds?";
-       cin>>seconds;
-       
+	int i;
+	char str[100];
+
+	cout<<"enter the string ";
+	gets(str);
+
+	for(i=0;str[i]!='\0';i++){
+		if(str[i]>='A' && str[i] <='Z'){
+			str[i] =str[i] + 32;
+		}
+		else if(str[i]>='a' && str[i] <='z'){
+			str[i] = str[i] - 32;
+
+		}
+		cout<<"toggled string :"<<str<<endl;
+	}
+
+
+
+	return 0;
+
 }
- 
-    void time::putime(void)      
-       {
-	     cont<<endl;
-	     cout<<"time after add:";
-	     count
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
