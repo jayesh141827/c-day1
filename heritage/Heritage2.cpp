@@ -1,47 +1,50 @@
+
 #include<iostream>
 #include<string.h>
 using namespace std;
 
-class Animal {
-	public:
-    string name;
-    int age;
-
-public:
-    void set_value(string n, int a) {
-        name = n;
-        age = a;
-    }
+class animal{
+	public :
+	char name[100];
+	int age;
+	
+	void setvalue(){
+		cout<<"enter name ="<<name<<endl;
+		cout<<"enter age ="<<age<<endl;
+	}
 };
 
-class Zebra : public Animal {
-public:
-    void display() {
-        cout << "Zebra Name: " << name << endl;
-        cout << "Zebra Age: " << age << endl;
-        cout << "Place of Origin: Africa" << endl;
-    }
+class zebra:public animal{
+	public :
+            void set(){
+	    char name[100];
+	    int age;
+	    char origin;
+		cout<<"enter name ="<<endl;
+	        cout<<"enter age ="<<endl;
+                cout<<"enter origin ="<<endl;
+	    }
+};
+class dolphin:public animal{
+	public :
+            void get(){
+	    char name[100];
+	    int age;
+	    char origin;
+		cout<<"enter name ="<<name<<endl;
+		cout<<"enter age ="<<age<<endl;
+		cout<<"enter origin ="<<origin<<endl;
+   }
 };
 
-class Dolphin : public Animal {
-public:
-    void display() {
-        cout << "Dolphin Name: " << name << endl;
-        cout << "Dolphin Age: " << age << endl;
-        cout << "Place of Origin: Oceans" << endl;
-    }
-};
-
-int main() {
-    Zebra z;
-    z.set_value("Marty", 5);
-    z.display();
-
-    cout << endl;
-
-    Dolphin d;
-    d.set_value("Flipper", 10);
-    d.display();
-
-    return 0;
+int main(){
+	zebra ze;
+	ze.set();
+	ze.setvalue();
+	dolphin dd;
+	dd.get();
+	dd.setvalue();
+	
+	
+	return 0;
 }
