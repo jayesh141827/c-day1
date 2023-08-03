@@ -4,7 +4,7 @@ using namespace std;
 
 class Person{
         public:
-        string name;
+        char name;
         int age;
    
     public:
@@ -23,8 +23,8 @@ class Person{
 
 class Employee{
     public:
-        string designation;
-        float salary;
+        char designation;
+        int salary;
    
     public:
         void readEmployee(){
