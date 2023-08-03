@@ -1,45 +1,77 @@
-#include<iostream>
-#include<string.h>
+#include <iostream>
+#include <stdio.h>
 using namespace std;
 
-class employee1{
-	public :
-	int name;
-	char role[100];
-	void setdata(){
-		
-		cout<<"enter employees name ="<<name<<endl;
-		cout<<"enter employees role ="<<role<<endl;
-	}
-};
-class employee2{
-	public :
-		
-	int id;
-	int experience;
-	
-	void showdata(){
-		
-		cout<<"enter employees id ="<<id<<endl;
-		cout<<"enter employees experience ="<<experience<<endl;
-	}
-};
-class employee3 : public employee1 , public employee2{
-	
-    public :
-	char contact[10];
-	void printdata(){
-		
-		cout<<"enter employees contact ="<<contact<<endl;
-	}
+class emplooyinfo {
+protected:
+    char name[30];
+    int empId;
+    char gender;
 
+public:
+    void getemplooyinfo (void)
+    {
+        cout << "Enter Name: ";
+        cin.getline(name, 30);
+        cout << "Enter Emp. Id: ";
+        cin >> empId;
+        cout << "Enter Gender: ";
+        cin >> gender;
+    }
 };
 
-int main(){
-	employee3 ee;
-	ee.setdata();
-	ee.showdata();
-	ee.printdata();
-	
-	return 0;
+class deptInfo {
+protected:
+    char deptName[30];
+    char assignedWork[30];
+    int time2complete;
+
+public:
+    void getDeptInfo(void)
+    {
+        cout << "Enter Department Name: ";
+        cin.ignore(1);
+        cin.getline(deptName, 30);
+        cout << "Enter assigned work: ";
+        fflush(stdin);
+        cin.getline(assignedWork, 30);
+        cout << "Enter time in hours to complete work: ";
+        cin >> time2complete;
+    }
+};
+
+class employee : private emplooyinfo , private deptInfo {
+public:
+    void getEmployeeInfo(void)
+    {
+        cout << "Enter employee's basic info: " << endl;
+        
+        getBasicInfo();
+        cout << "Enter employee's department info: " << endl;
+        getDeptInfo(); 
+    }
+    void printEmployeeInfo(void)
+    {
+        cout << "Employee's Information is: " << endl;
+        cout << "Basic Information...:" << endl;
+        cout << "Name: " << name << endl; 
+        cout << "Employee ID: " << empId << endl;
+        cout << "Gender: " << gender << endl
+             << endl; 
+
+        cout << "Department Information...:" << endl;
+        cout << "Department Name: " << deptName << endl; 
+        cout << "Assigned Work: " << assignedWork << endl; 
+        cout << "Time to complete work: " << time2complete << endl; 
+    }
+};
+
+int main()
+{
+    employee emp;
+
+    emp.getEmployeeInfo();
+    emp.printEmployeeInfo();
+
+    return 0;
 }
