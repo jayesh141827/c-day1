@@ -1,25 +1,33 @@
 #include<iostream>
 #include<string.h>
+
 using namespace std;
 
-class Mother {
-public:
-    void display() {
-        cout << "I am the Mother." << endl;
-    }
+class mother{
+	public :
+	void display(){
+		cout<<"hello"<<endl;
+		
+	}
+};
+class daughter : public mother{
+	public :
+		char a[100]="bye";
+		void display()
+		{
+			cout<<""<<a<<endl;
+		}
+
+		
+		
+	
 };
 
-class Daughter : public Mother {
-public:
-    void display() {
-        cout << "I am the Daughter." << endl;
-    }
-};
+int main(){
+	daughter dg;
+	dg.display();
+	dg.display();
 
-int main() {
-    Daughter d;
-    d.display();
-    
-    
-    return 0;
+	return 0;
+	
 }
