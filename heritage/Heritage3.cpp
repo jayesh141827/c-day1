@@ -1,63 +1,53 @@
 #include<iostream>
 #include<string.h>
+
 using namespace std;
 
-class Person{
-        public:
-        char name;
-        int age;
-   
-    public:
-        void readPerson(){
-            cout<<"Enter name: ";
-            cin>>name;
-            cout<<"Enter age: ";
-            cin>>age;
-        }
-       
-	    void printPerson(){
-            cout<<"Name: "<<name<<endl;
-            cout<<"Age: "<<age<<endl;
-        }
+class employee1{
+	public :
+	int name;
+	char role[100];
+	void setdata(){
+
+		cout<<"enter employees name ="<<name<<endl;
+		cout<<"enter employees role ="<<role<<endl;
+	}
+};
+class employee2{
+	public :
+
+	int id;
+	int experience;
+
+	void showdata(){
+
+		cout<<"enter employees id ="<<id<<endl;
+		cout<<"enter employees experience ="<<experience<<endl;
+	}
+};
+class employee3 : public employee1 , public employee2{
+
+    public :
+	char contact[10];
+	void printdata(){
+
+		cout<<"enter employees contact ="<<contact<<endl;
+	}
+
 };
 
-class Employee{
-    public:
-        char designation;
-        int salary;
-   
-    public:
-        void readEmployee(){
-            cout<<"Enter designation: ";
-            cin>>designation;
-            cout<<"Enter salary: ";
-            cin>>salary;
-        }
-        
-		void printEmployee(){
-            cout<<"Designation: "<<designation<<endl;
-            cout<<"Salary: "<<salary<<endl;
-        }
-};
 
-class EmpInfo: public Person, public Employee{
-    public:
-        void readEmpInfo(){
-            readPerson();
-            readEmployee();
-        }
-       
-	   void printEmpInfo(){
-            printPerson();
-            printEmployee();
-        }
-};
+
+
+
+
 
 int main(){
-    EmpInfo e;
-    e.readEmpInfo();
-    cout<<endl;
-    e.printEmpInfo();
-    
-    return 0;
+	employee3 ee;
+	ee.setdata();
+	ee.showdata();
+	ee.printdata();
+
+	return 0;
 }
+ 
