@@ -5,7 +5,7 @@ using namespace std;
 class MyClass {
 public:
     void memberFunc(int a = 0, int b = 0, int c = 0, int d = 0) {
-        cout << "Member Function called with arguments: "
+        cout << " arguments: "
 		     << a << " " << b << " " << c << " " << d << endl;
     }
 };
