@@ -1,53 +1,61 @@
 #include<iostream>
 #include<string.h>
+
 using namespace std;
 
-class Counter{
-    private:
-        int count;
-    public:
-        Counter(int c=0): count(c){}
-        
-        
-        Counter operator++(){
-            return Counter(++count);
-        }
-        
-       
-        Counter operator++(int){
-            return Counter(count++);
-        }
-        
-        
-        Counter operator--(){
-            return Counter(--count);
-        }
-        
-        
-        Counter operator--(int){
-            return Counter(count--);
-        }
-        
-        
-        void display(){
-            cout << "Count: " << count << endl;
-        }
+class points{
+	
+	public :
+		
+		int x;
+		
+		void set(int x){
+			
+			this->x = x;
+			
+		}
+	
+	    void print(){
+	    	
+	    	cout<<"x = "<< x << endl;
+	    	cout<<endl;
+	    	
+		}
+	
+	    points operator ++(int){
+	    	
+	    	points temp;
+	    	temp.x = this-> x++;
+	    	cout<<"X++";
+	    	cout<<endl;
+			return temp;
+	    	
+	    	
+		}
+	    points operator --(int){
+	    	
+	    	points temp;
+	    	temp.x = this-> x--;
+	    	cout<<"X--";
+	    	cout<<endl;
+	    	return temp;
+	    	
+		}		
+		
 };
 
 int main(){
-    Counter c1(5);
-    
-    cout << "Initial ";
-    c1.display();
-    
-   
-    cout << "prefix: ";
-    (++c1).display();
-    
-   
-    cout << "postfix: ";
-    (c1++).display();
-    c1.display();
-    
-    return 0;
+	
+	points p1,p2,p3;
+	
+	p1.set(12);
+	p1.print();
+	
+	p1++;
+	p1.print();
+	
+    p1--;
+	p1.print();
+	
+	return 0;
 }
